@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<style>
+    .hide {
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: 1px;
+        height: 1px;
+    }
+    .action_btn {
+        width: 200px;
+        margin: 0 auto;
+        display: inline;
+    }
+    .container {
+        height: 50px;
+    }
+</style>
+
+<script src="ipfs.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<h1 style="font-family:verdana"> Welcome to your IPFS file storage gateway! </h1>
+<div>
+    <h4 style="font-family:verdana">Enter text you would like to save to IFPS:</h4>
+    <input id='submittedText'>
+    <input onclick="submitText()" type="button" value="Submit">
+</br>
+    <h4 style="font-family:verdana">Upload image you would like to save to IFPS:</h4>
+    <div class="action_btn">
+       <input type="file" id="uploadImage" accept="image/png, image/jpeg" >
+        <button onclick='addImage()' id='uploadImageButton'>Upload Image</button> 
+    </div>
+    
+    <p id='returnedCID'></p>
+</br>
+</div>
+
+
+<div>
+    <h4 style="font-family:verdana">IPFS node request:</h4>
+    <input id='submittedIPFS'>
+    <input onclick="getData()" type="button" value="Get Data">
+    <div class = 'container' id='responseContainerText'>
+        <p id='returnedData'></p>
+        <img id='showImage' src='' style = 'width:50%;'>
+    </div>
+</div>
